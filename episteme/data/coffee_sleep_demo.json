@@ -1,0 +1,19 @@
+{
+  "studies": [
+    {"pmid": "D001", "title": "Coffee consumption and sleep quality in healthy adults: a randomized crossover trial", "abstract": "We randomized 40 healthy human adults to caffeine versus placebo and measured sleep onset latency. Caffeine increased latency in humans.", "year": 2021, "authors": ["Doe J", "Roe R"], "journal": "Sleep Med", "doi": "10.000/d001", "language": "eng"},
+    {"pmid": "D002", "title": "Effect of evening coffee on polysomnography in older adults", "abstract": "A double-blind RCT in human participants (n=55) found reduced slow-wave sleep after evening coffee.", "year": 2019, "authors": ["Lee K"], "journal": "J Sleep Res", "doi": "10.000/d002", "language": "eng"},
+    {"pmid": "D003", "title": "Caffeine and subjective sleep in adolescents", "abstract": "Cross-sectional human survey (n=320) linking daily coffee intake to poorer sleep quality.", "year": 2022, "authors": ["Patel S"], "journal": "Sleep Health", "doi": "10.000/d003", "language": "eng"},
+    {"pmid": "D004", "title": "A systematic review of caffeine effects on sleep", "abstract": "We review the literature on coffee and sleep. This is a review article, not a primary trial.", "year": 2020, "authors": ["Kim M"], "journal": "Nutrients", "doi": "10.000/d004", "language": "eng"},
+    {"pmid": "D005", "title": "Coffee and locomotor activity in rats", "abstract": "We administered caffeine to rats and measured activity; no human subjects were studied.", "year": 2018, "authors": ["Mouse R"], "journal": "Pharmacol Biochem", "doi": "10.000/d005", "language": "eng"},
+    {"pmid": "D006", "title": "Coffee and cardiovascular risk in humans", "abstract": "Longitudinal human cohort on coffee and heart disease; sleep was not assessed.", "year": 2017, "authors": ["Tan V"], "journal": "JAMA", "doi": "10.000/d006", "language": "eng"},
+    {"pmid": "D007", "title": "Kaffee und Schlafqualität bei Erwachsenen", "abstract": "Eine Beobachtungsstudie über Kaffee und Schlaf in Deutschland.", "year": 2021, "authors": ["Müller A"], "journal": "Somnologie", "doi": "10.000/d007", "language": "ger"},
+    {"pmid": "D008", "title": "Editorial: should we warn patients about coffee?", "abstract": "An editorial commentary on caffeine guidance.", "year": 2023, "authors": ["Ed E"], "journal": "BMJ", "doi": "10.000/d008", "language": "eng"}
+  ],
+  "effects": [
+    {"label": "Doe 2021", "table": [10, 30, 22, 18]},
+    {"label": "Lee 2019", "table": [12, 28, 20, 20]},
+    {"label": "Patel 2022", "table": [15, 25, 18, 22]},
+    {"label": "Tan 2017*", "table": [9, 31, 19, 21]},
+    {"label": "Müller 2021", "table": [11, 29, 21, 19]}
+  ]
+}

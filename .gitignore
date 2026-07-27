@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+episteme_demo_out/
+episteme_run_out/
+example_output/
+.pytest_cache/
+*.svg.bak

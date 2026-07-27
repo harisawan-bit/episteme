@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "episteme"
+version = "0.1.0"
+description = "Reproducible, dependency-free systematic-review and meta-analysis engine (PubMed -> PRISMA -> stats -> figures)"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "harisawan-bit" }]
+keywords = ["meta-analysis", "systematic-review", "evidence-synthesis", "PRISMA", "PubMed", "episteme"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Intended Audience :: Science/Research",
+]
+
+[project.urls]
+Homepage = "https://github.com/harisawan-bit/episteme"
+Repository = "https://github.com/harisawan-bit/episteme"
+
+[project.scripts]
+episteme = "episteme.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["episteme*"]
+
+[tool.setuptools.package-data]
+episteme = ["data/*.json"]

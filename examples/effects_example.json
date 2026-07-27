@@ -1,0 +1,6 @@
+[
+  {"label": "Smith 2021", "measure": "OR", "table": [10, 30, 22, 18]},
+  {"label": "Lee 2019",   "measure": "OR", "table": [12, 28, 20, 20]},
+  {"label": "Patel 2022", "measure": "OR", "table": [15, 25, 18, 22]},
+  {"label": "Tan 2017",   "yi": -0.55, "vi": 0.08}
+]
