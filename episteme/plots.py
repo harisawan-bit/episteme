@@ -10,7 +10,7 @@ from __future__ import annotations
 import math
 from typing import List
 
-from .meta import back_transform, ci_back_transform, _Z95
+from .meta import _Z95, back_transform
 
 _W = 820
 _H = 440

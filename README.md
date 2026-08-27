@@ -1,5 +1,10 @@
 # Episteme
 
+[![CI](https://github.com/harisawan-bit/episteme/actions/workflows/ci.yml/badge.svg)](https://github.com/harisawan-bit/episteme/actions/workflows/ci.yml)
+[![PyPI version](https://img.shields.io/pypi/v/episteme.svg)](https://pypi.org/project/episteme/)
+[![Python](https://img.shields.io/pypi/pyversions/episteme.svg)](https://pypi.org/project/episteme/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 > Reproducible, dependency-free systematic-review & meta-analysis engine.
 
 **PubMed → PRISMA screening → meta-analysis → publication figures, in one command — no paid APIs, no numpy, no R.**

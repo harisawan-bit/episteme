@@ -4,19 +4,24 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "episteme"
-version = "0.1.0"
+version = "0.2.0"
 description = "Reproducible, dependency-free systematic-review and meta-analysis engine (PubMed -> PRISMA -> stats -> figures)"
 readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "MIT" }
 authors = [{ name = "harisawan-bit" }]
 keywords = ["meta-analysis", "systematic-review", "evidence-synthesis", "PRISMA", "PubMed", "episteme"]
+dependencies = []
+
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Topic :: Scientific/Engineering :: Medical Science Apps.",
     "Intended Audience :: Science/Research",
 ]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "ruff>=0.4"]
 
 [project.urls]
 Homepage = "https://github.com/harisawan-bit/episteme"
@@ -27,6 +32,14 @@ episteme = "episteme.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["episteme*"]
+
+[tool.ruff]
+target-version = "py38"
+
+[tool.ruff.lint]
+# UP006/UP045 suggest PEP 585/604 syntax (list[X], X | Y) which is only valid
+# on Python 3.9+. This project supports 3.8, so these are intentionally ignored.
+ignore = ["UP006", "UP045"]
 
 [tool.setuptools.package-data]
 episteme = ["data/*.json"]

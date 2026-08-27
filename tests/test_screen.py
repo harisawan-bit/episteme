@@ -1,11 +1,11 @@
 """Tests for deterministic PRISMA screening."""
 
-import sys
 import os
+import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from episteme.models import Study, Decision
+from episteme.models import Decision, Study
 from episteme.screen import ScreenRules, screen
 
 

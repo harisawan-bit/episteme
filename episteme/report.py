@@ -6,9 +6,9 @@ import json
 from datetime import datetime, timezone
 from typing import List
 
-from .models import ScreenResult, MetaResult, Decision
-from .screen import ScreenRules
 from .meta import back_transform, ci_back_transform
+from .models import Decision, MetaResult, ScreenResult
+from .screen import ScreenRules
 
 _FLOW = [
     ("Identification", "Records identified from PubMed search", "identified"),
@@ -31,7 +31,7 @@ def prisma_svg(counts: dict, path: str) -> str:
     bw = 360
     parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" font-family="Helvetica,Arial,sans-serif" font-size="13">']
     parts.append(f'<rect width="{W}" height="{H}" fill="white"/>')
-    parts.append(f'<text x="20" y="24" font-weight="bold" font-size="15" fill="#222">PRISMA 2020 flow</text>')
+    parts.append('<text x="20" y="24" font-weight="bold" font-size="15" fill="#222">PRISMA 2020 flow</text>')
     y = 50
     for stage, label, n in rows:
         parts.append(f'<rect x="{x0}" y="{y}" width="{bw}" height="40" fill="#f4f6f8" stroke="#cdd6df"/>')

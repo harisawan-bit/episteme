@@ -13,7 +13,7 @@ back-transformed (exp) for reporting.
 from __future__ import annotations
 
 import math
-from typing import List, Sequence, Tuple
+from typing import Sequence, Tuple
 
 from .models import MetaResult
 
