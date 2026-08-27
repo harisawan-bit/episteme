@@ -8,4 +8,4 @@ and emits a PRISMA flow diagram, forest/funnel plots, and a full audit log.
 Zero hard dependencies -- Python 3.8+ standard library only.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
