@@ -8,12 +8,12 @@ and a clearly heterogeneous dataset for I^2 sanity.
 """
 
 import math
-import sys
 import os
+import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from episteme.meta import combine, effect_from_2x2, gammq, back_transform
+from episteme.meta import back_transform, combine, effect_from_2x2, gammq
 
 
 def test_effect_from_2x2_or():

@@ -1,14 +1,14 @@
 """End-to-end tests: demo run produces valid artifacts, and live PubMed works."""
 
+import json
 import os
 import sys
-import json
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from episteme import pubmed
 from episteme.cli import main
 from episteme.report import prisma_svg
-from episteme import pubmed
 
 
 def test_demo_end_to_end(tmp_path):
@@ -18,11 +18,13 @@ def test_demo_end_to_end(tmp_path):
     for f in ("summary.md", "audit.json", "prisma.svg", "forest.svg", "funnel.svg"):
         assert os.path.exists(os.path.join(out, f)), f
     # audit is valid JSON with decisions
-    audit = json.load(open(os.path.join(out, "audit.json")))
+    with open(os.path.join(out, "audit.json")) as _f:
+        audit = json.load(_f)
     assert audit["summary"]["total_fetched"] == 8
     assert audit["summary"]["included"] >= 1
     # summary mentions pooled estimate
-    md = open(os.path.join(out, "summary.md")).read()
+    with open(os.path.join(out, "summary.md")) as _f:
+        md = _f.read()
     assert "Random-effects" in md
 
 

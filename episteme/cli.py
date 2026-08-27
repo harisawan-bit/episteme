@@ -16,15 +16,14 @@ import argparse
 import json
 import os
 import sys
-from datetime import datetime, timezone
 
 from . import __version__
-from .models import Decision, Study
-from .screen import ScreenRules, screen
-from .pubmed import collect
 from .meta import combine, effect_from_2x2
+from .models import Decision, Study
 from .plots import forest_plot, funnel_plot
-from .report import prisma_svg, audit_log, markdown_summary
+from .pubmed import collect
+from .report import audit_log, markdown_summary, prisma_svg
+from .screen import ScreenRules, screen
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DEMO_JSON = os.path.join(HERE, "data", "coffee_sleep_demo.json")
@@ -50,7 +49,8 @@ def cmd_demo(args) -> int:
     audit = audit_log("(demo) coffee sleep", rules, results, os.path.join(out, "audit.json"))
 
     # Build a synthetic 2x2 meta-analysis from the demo effect table.
-    eff = json.load(open(DEMO_JSON))["effects"]
+    with open(DEMO_JSON) as _f:
+        eff = json.load(_f)["effects"]
     meta_studies = [
         {"label": e["label"], "yi": effect_from_2x2("OR", *e["table"])[0],
          "vi": effect_from_2x2("OR", *e["table"])[1]}
@@ -105,12 +105,13 @@ def cmd_run(args) -> int:
     results = screen(studies, rules)
     audit = audit_log(args.query, rules, results, os.path.join(out, "audit.json"))
 
-    included = [r for r in results if r.decision == Decision.INCLUDE]
+    [r for r in results if r.decision == Decision.INCLUDE]
 
     # Optional meta-analysis from a supplied effects JSON file.
     meta = None
     if args.effects and os.path.exists(args.effects):
-        eff = json.load(open(args.effects))
+        with open(args.effects) as _f:
+            eff = json.load(_f)
         meta_studies = []
         for e in eff:
             if "table" in e:

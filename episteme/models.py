@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field, asdict
+from dataclasses import asdict, dataclass, field
 from enum import Enum
 from typing import List, Optional
 
@@ -35,7 +35,7 @@ class Study:
         return asdict(self)
 
     @classmethod
-    def from_dict(cls, d: dict) -> "Study":
+    def from_dict(cls, d: dict) -> Study:
         d = dict(d)
         d.setdefault("authors", [])
         return cls(**d)

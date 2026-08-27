@@ -78,13 +78,12 @@ def screen_study(study: Study, rules: ScreenRules) -> ScreenResult:
         return ScreenResult(study, Decision.EXCLUDE, reasons, rule_keys)
 
     # 3. Animal-only filter
-    if rules.require_human:
-        if re.search(r"\b(animal|rats?|mice|mouse|canine|feline|porcine)\b", text) and not re.search(
-            r"\bhuman(s)?\b", text
-        ):
-            reasons.append("animal-only study (no human participants mentioned)")
-            rule_keys.append("animal")
-            return ScreenResult(study, Decision.EXCLUDE, reasons, rule_keys)
+    if rules.require_human and re.search(
+        r"\b(animal|rats?|mice|mouse|canine|feline|porcine)\b", text
+    ) and not re.search(r"\bhuman(s)?\b", text):
+        reasons.append("animal-only study (no human participants mentioned)")
+        rule_keys.append("animal")
+        return ScreenResult(study, Decision.EXCLUDE, reasons, rule_keys)
 
     # 4. Explicit exclusion terms
     for term in rules.exclude_any:
